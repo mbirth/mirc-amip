@@ -35,6 +35,8 @@ menu status,channel,query {
   .$iif($isdde(mPlug),$iif($dde(mPlug,var_playing) != $null,$style(1)) Play): dde mPlug control play
   .$iif($isdde(mPlug),Pause): dde mPlug control pause
   .$iif($isdde(mPlug),$iif($dde(mPlug,var_playing) == $null,$style(1)) Stop): dde mPlug control stop
+  .$iif($isdde(mPlug),FF (5secs)): dde mPlug control ff
+  .$iif($isdde(mPlug),Rew (5secs)): dde mPlug control rew
   .$iif($isdde(mPlug),Next track): dde mPlug control >
   .$iif($isdde(mPlug),Previous track): dde mPlug control <
   .-
@@ -279,7 +281,7 @@ alias amipbuildoutput {
     }
   }
   else {
-    %amipoutput = %amipoutput $+ 4,1 No appropriate DDE Server found. %amipmsgaft
+    %amipoutput = %amipoutput $+ 4,1 WinAMP is not running or DDE error. %amipmsgaft
   }
   return %amipoutput
 }
