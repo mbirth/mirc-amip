@@ -265,14 +265,14 @@ alias amipbuildoutput {
   if ($isdde(mPlug) == $true) {
     amipsonginfo
     if (%amipisplaying == 1) {
-      %amipoutput = %amipoutput $+ 4,1 %amipext %amipmsgsep
+      %amipoutput = %amipoutput $+ 04,01 %amipext %amipmsgsep
       var %amippdname = $chr(160) $+ %amipname $+ $chr(160)
       var %amippdlen = $len(%amippdname)
       var %amippddone = $round($calc(%amippdlen * %amipperc / 100), 0)
       var %amippdleft = $calc(%amippdlen - %amippddone)
-      %amipoutput = %amipoutput $+ 1,11 $+ $left(%amippdname, %amippddone) $+ 11,1 $+ $right(%amippdname, %amippdleft) $+ %amipmsgsep
-      if (%amipext != Streaming) %amipoutput = %amipoutput $+ 10,1 %amiplen2 %amipmsgsep
-      %amipoutput = %amipoutput $+ 14,1 since %amippos
+      %amipoutput = %amipoutput $+ 01,11 $+ $left(%amippdname, %amippddone) $+ 11,01 $+ $right(%amippdname, %amippdleft) $+ %amipmsgsep
+      if (%amipext != Streaming) %amipoutput = %amipoutput $+ 10,01 %amiplen2 %amipmsgsep
+      %amipoutput = %amipoutput $+ 14,01 since %amippos
       if (%amipperc > 0) %amipoutput = %amipoutput ( $+ %amipperc $+ $chr(37) $+ )
       %amipoutput = %amipoutput %amipmsgaft
     }
